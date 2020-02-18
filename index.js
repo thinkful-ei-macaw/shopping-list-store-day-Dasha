@@ -104,10 +104,12 @@ const getItemIdFromElement = function(item) {
 };
 
 //user can edit the title of an item
+//how? there needs to be an edit button as well as a text box -> that goes into html
 const editListItem = function(itemName) {
   //what are we editing?
-  store.items.name;
-  //how? there needs to be an edit button as well as a text box -> that goes into html
+  store.items.find(item => item.id); //is this enough?
+  //oh i got it! now i need to define itemName
+  foundItem.name = itemName;
 };
 //there should also be an event listener for the click on edit
 const handleItemEdit = function() {
@@ -115,6 +117,8 @@ const handleItemEdit = function() {
     const id = editListItem(even.currentTarget);
     //add a text box here somehow? it needs to show only once the edit is clicked
     $("#item-edit").show();
+    //need to incorporate itemName value in here?
+    let itemName = $("").val();
   });
 };
 
